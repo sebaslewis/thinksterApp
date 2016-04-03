@@ -169,6 +169,14 @@ function($scope, posts, auth){
     $scope.incrementUpvotes = function(post) {
         posts.upvote(post);
     };
+
+    $scope.addHttpToPost = function(link) {
+        console.log('hola');
+        return link.match(/^[a-zA-Z]+:\/\//) ?
+            link :
+            'http://' + link;
+    };
+
 }]);
 
 app.controller('PostsCtrl', [
